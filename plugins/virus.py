@@ -73,7 +73,7 @@ ş̵̹̼̹̤̙̭̞̍҉̸̙̙̯͚͖̗͋̔̾̀̀̂͌͝͝҉̷̭͎͊͑͒́͂̀̅̾ 
 # vars
 safemode = "On"
 
-@events.register(events.NewMessage(outgoing=True,pattern=r''+cmdvirus))
+@client.on(events.NewMessage(outgoing=True,pattern=r''+cmdvirus))
 async def virus(event):
     global safemode
     chat = await event.get_chat()
