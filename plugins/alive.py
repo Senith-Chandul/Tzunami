@@ -23,7 +23,7 @@ up_time = uptime.strftime("%d-%M-%Y | %H:%M:%S")
 cmd = COMMAND_HANDLER+'alive'
 
 # alive msg
-@events.register(events.NewMessage(outgoing=True,pattern=r''+cmd))
+@client.on(events.NewMessage(outgoing=True,pattern=r''+cmd))
 async def alive(event):
     chat = await event.get_chat()
     user = await client.get_me()
