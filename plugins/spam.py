@@ -20,7 +20,7 @@ client = ub.client
 cmdspam = COMMAND_HANDLER+'spam'
 cmdmspam = COMMAND_HANDLER+'mspam'
 
-@events.register(events.NewMessage(outgoing=True,pattern=r''+cmdspam))
+@client.on(events.NewMessage(outgoing=True,pattern=r''+cmdspam))
 async def spam(event):
     chat = await event.get_chat()
     replied = await event.get_reply_message()
@@ -37,7 +37,7 @@ async def spam(event):
     except:
         await client.edit_message(event.message,"""**Tzunami_UB**\nReply to a text message..""")
 
-@events.register(events.NewMessage(outgoing=True,pattern=r''+cmdmspam))
+@client.on(events.NewMessage(outgoing=True,pattern=r''+cmdmspam))
 async def mediaspam(event):
     chat = await event.get_chat()
     replied = await event.get_reply_message()
