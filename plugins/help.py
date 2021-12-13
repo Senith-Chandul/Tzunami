@@ -24,7 +24,7 @@ cmd = COMMAND_HANDLER+'help'
 
 # help msg
 
-@events.register(events.NewMessage(outgoing=True,pattern=r''+cmd))
+@client.on(events.NewMessage(outgoing=True,pattern=r''+cmd))
 async def help(event):
     chat = await event.get_chat()
     user = await client.get_me()
